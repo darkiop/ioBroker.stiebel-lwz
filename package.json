@@ -1,0 +1,41 @@
+{
+  "name": "iobroker.stiebel-lwz",
+  "version": "0.0.1",
+  "description": "ioBroker stiebel-lwz Adapter",
+  "author": {
+    "name": "Thorsten Walk",
+    "email": "darkiop@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Thorsten Walk",
+      "email": "darkiop@gmail.com"
+    }
+  ],
+  "homepage": "https://github.com/darkiop/ioBroker.stiebel-lwz",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "stiebel-lwz",
+    "Smart Home",
+    "home automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darkiop/ioBroker.stiebel-lwz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "mocha": "^4.1.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --exit"
+  },
+  "bugs": {
+    "url": "https://github.com/darkiop/ioBroker.stiebel-lwz/issues"
+  },
+  "readmeFilename": "README.md"
+}

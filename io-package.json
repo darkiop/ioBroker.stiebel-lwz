@@ -1,0 +1,47 @@
+{
+    "common": {
+        "name": "stiebel-lwz",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial version",
+                "de": "Initiale Version"
+            }
+        },
+		"title": "ioBroker Stiebel Eltron LWZ Adapter",
+        "titleLang": {
+            "de": "Stiebel Eltron LWZ Adapter",
+            "en": "Stiebel Eltron LWZ Adapter"
+        },
+        "desc": {
+            "en": "Stiebel Eltron LWZ Adapter",
+            "de": "Stiebel Eltron LWZ Adapter"
+        },
+        "authors": [
+            "Thorsten Walk <darkiop@gmail.com>"
+        ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "stiebel-lwz.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/darkiop/ioBroker.stiebel-lwz/master/admin/stiebel-lwz.png",
+        "keywords": ["stiebel-lwz", "vis", "GUI", "graphical", "scada"],
+        "readme": "https://github.com/darkiop/ioBroker.stiebel-lwz/blob/master/README.md",
+        "loglevel": "info",
+        "type": "general",
+        "restartAdapters": ["vis"]
+    },
+    "native": {
+        "test1": true,
+        "test2": 42,
+        "mySelect": "auto"
+    },
+    "objects": [
+
+    ]
+}
