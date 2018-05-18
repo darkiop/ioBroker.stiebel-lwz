@@ -1,10 +1,14 @@
 ![Logo](admin/stiebel-lwz.png)
+
 # ioBroker.stiebel-lwz
 =================
 
-This adapter is a stiebel-lwz for the creation of an ioBroker adapter. You do not need it at least that you plan developing your own adapter.
+This adapter provides an interface to the Stiebel Eltron Web to control a LWZ over it. Tested with ISGweb version 8.5.6 on a LWZ 303i.
 
-It includes both code running within iobroker and as vis widget. If you only plan to create a vis widget then you should use the [iobroker.vis-stiebel-lwz](https://github.com/ioBroker/ioBroker.vis-stiebel-lwz) instead.
+## TODO
+* validate values for isg_set.sh
+* parse ISGweb to save parameters in iobroker objects
+* more parameters to set
 
 ## Changelog
 
