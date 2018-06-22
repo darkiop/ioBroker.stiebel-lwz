@@ -1,6 +1,6 @@
 {
   "name": "iobroker.stiebel-lwz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ioBroker stiebel-lwz Adapter",
   "author": {
     "name": "Thorsten Walk",
