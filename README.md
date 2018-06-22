@@ -12,9 +12,10 @@ Use at your own risk!
 https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 
 ## TODO
-* validate values for isg_set.sh
+* validate values for isg_set.sh / iobroker objects
+* add more parameters from ISGweb
+* write isg_set.sh in JS
 * parse ISGweb to save parameters in iobroker objects
-* more parameters to set
 
 ## Changelog
 ### 0.0.2 (2018-06-21)
