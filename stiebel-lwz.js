@@ -66,7 +66,26 @@ function main() {
 
     adapter.log.info('isgIP: ' + adapter.config.isgIP);
 
-    var isgParameters = ['ISG_SET_BETRIEBSART', 'ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
+    //var isgParameters = ['ISG_SET_BETRIEBSART', 'ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
+    var isgParameters = ['ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
+
+    // Betriebsart
+    adapter.setObjectNotExists("ISG_SET_BETRIEBSART", {
+        type: "state",
+        common: {
+            name: "ISG_SET_BETRIEBSART",
+            type: "string",
+            role: "value",
+            read: true,
+            write: true,
+            desc: "",
+            states: {
+                "AUTOMATIK": "Automatik",
+                "WARMWASSER": "Warmwasser"
+            }
+        },
+        native: {}
+    });
 
     for (var key in isgParameters) {
         
