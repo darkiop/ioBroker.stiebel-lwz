@@ -2,9 +2,14 @@
 
 # ioBroker.stiebel-lwz
 
-This adapter provides an interface to the Stiebel Eltron Web (https://www.stiebel-eltron.de/de/home/produkte-loesungen/erneuerbare_energien/regelung_energiemanagement/internet_servicegateway/isg_web.html) to control a LWZ (heat pump) over it. Tested with ISGweb version 8.5.6 on a LWZ 303i (production year 2011).
+This adapter provides an interface to the Stiebel Eltron Web [1] to control a LWZ (heat pump) over it. Tested with ISGweb version 8.5.6 on a LWZ 303i (production year 2011).
 
 Use at your own risk!
+
+[1] https://www.stiebel-eltron.de/de/home/produkte-loesungen/erneuerbare_energien/regelung_energiemanagement/internet_servicegateway/isg_web.html
+
+## Disucssion
+https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 
 ## TODO
 * validate values for isg_set.sh
@@ -12,9 +17,11 @@ Use at your own risk!
 * more parameters to set
 
 ## Changelog
-
-### 0.0.1 (2018.05.18)
-* (darkiop) initial version
+### 0.0.2 (2018-06-21)
+- (darkiop) removed widgets & www folders
+- (darkiop) changes io-package.json: adapter type climate-control, native default IP 0.0.0.0, removed restartAdapters
+### 0.0.1 (2018-05-18)
+- (darkiop) initial version
 
 ## License
 The MIT License (MIT)

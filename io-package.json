@@ -33,13 +33,10 @@
         "keywords": ["stiebel-lwz", "vis", "GUI", "graphical", "scada"],
         "readme": "https://github.com/darkiop/ioBroker.stiebel-lwz/blob/master/README.md",
         "loglevel": "info",
-        "type": "general",
-        "restartAdapters": ["vis"]
+        "type": "climate-control"
     },
     "native": {
-        "test1": true,
-        "test2": 42,
-        "mySelect": "auto"
+        "isgIP": "0.0.0.0"
     },
     "objects": [
 
