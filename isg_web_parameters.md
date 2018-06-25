@@ -1,6 +1,53 @@
 
-## PARAMETERS
+# PARAMETERS
+*extracted from ISGweb v8.5.6*
+
+## PROGRAMME
+
+### HEIZPROGRAMM
+
+#### HEIZPROGRAMM HK1
+*tbd*
+24 * 4 = 96:
+0 = 0 Uhr
+1 = 0:15 Uhr
+2 = 0:30 Uhr
+3 = 0:45 Uhr
+4 = 1:00 Uhr
+5 = 1:15 Uhr
+*...*
+96 = 23:59 Uhr
+
+Von 0 bis 1 Uhr: value = 0;4
+Von 23 bis 0 Uhr: value = 92;96
+
+{"name":"val238","value":"0;96"}      Montag erster Zeitstrahl
+{"name":"val239","value":"128;128"}   Montag zweiter Zeitstrahl
+{"name":"val240","value":"128;128"}   Montag dritter Zeitstrahl
+{"name":"val241","value":"0;96"}      Dienstag?
+{"name":"val242","value":"128;128"}
+{"name":"val243","value":"128;128"}
+{"name":"val244","value":"0;96"}      Mittwoch?
+{"name":"val245","value":"128;128"}
+{"name":"val246","value":"128;128"}
+{"name":"val247","value":"0;96"}      Donnerstag?
+{"name":"val248","value":"128;128"}
+{"name":"val249","value":"128;128"}
+{"name":"val250","value":"0;96"}      Freitag?
+{"name":"val251","value":"128;128"}
+{"name":"val252","value":"128;128"}
+{"name":"val253","value":"0;96"}      Samstag?
+{"name":"val254","value":"128;128"}
+{"name":"val255","value":"128;128"}
+{"name":"val256","value":"0;96"}      Sonntag?
+{"name":"val257","value":"128;128"}
+{"name":"val258","value":"128;128"}]
+
+
+## EINSTELLUNGEN
+
 ### HEIZEN
+
 #### RAUMTEMPERATUREN HK1
 |name|code and value|valid values|
 |---|---|---|
@@ -84,6 +131,7 @@
 | WW-ECO | {"name":"val116","value":"1"} | an / aus (0/1) |
 
 ### LÜFTEN
+
 #### LÜFTUNGSSTUFEN
 |name|code and value|valid values|
 |---|---|---|
@@ -94,7 +142,11 @@
 | STUFE-HAND | {"name":"val188","value":"2"} | zwischen 0 und 3 |
 
 #### LÜFTUNGSZEITEN
+*tbd*
+
 #### LUFTVOLUMENSTROM
+*tbd*
+
 #### PASSIVKÜHLUNG
 |name|code and value|valid values|
 |---|---|---|
