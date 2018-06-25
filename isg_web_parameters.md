@@ -1,10 +1,8 @@
-## PARAMETERS
-
-### HEIZEN
-
-#### RAUMTEMPERATUREN HK1
-|name|codes|valid values|
+|name|code and value|valid values|
 |---|---|---|
+|## PARAMETERS|
+|### HEIZEN|
+|#### RAUMTEMPERATUREN HK1|
 |RAUMTEMP. TAG | {"name":"val5","value":"17,0"} | Gültige Werte: Eingabe zwischen 10 °C und 30 °C|
 |RAUMTEMP. NACHT | {"name":"val7","value":"19,0"} | Gültige Werte: Eingabe zwischen 10 °C und 30 °C|
 |RAUMTEMP. BEREITSCHAFT | {"name":"val58","value":"10,0"} | Gültige Werte: Eingabe zwischen 10 °C und 30 °C|
