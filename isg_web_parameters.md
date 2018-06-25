@@ -2,6 +2,11 @@
 # PARAMETERS
 *extracted from ISGweb v8.5.6*
 
+## START
+|name|code and value|valid values|
+|---|---|---|
+|BETRIEBSART|{"name":"val39s","value":"11"}|11 = AUTOMATIK, 1 = BEREITSCHAFT, 3 = TAGBETRIEB, 4 = ABSENKBETRIEB,5 = WARMWASSER, 14 = HANDBETRIEB, 0 = NOTBETRIEB|
+
 ## PROGRAMME
 
 ### HEIZPROGRAMM
