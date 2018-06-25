@@ -41,17 +41,17 @@ adapter.on('stateChange', function (id, state) {
     }
 
     // TODO Werte validieren
-    if (id == adapter.name + '.' + adapter.instance + '.ISG_SET_BETRIEBSART') {
-        adapter.log.info('Setze ISG_SET_BETRIEBSART auf: ' + state.val);
+    if (id == adapter.name + '.' + adapter.instance + '.Start.Betriebsart') {
+        adapter.log.info('Setze Betriebsart auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'BETRIEBSART', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.ISG_SET_LUEFTERSTUFETAG') {
-        adapter.log.info('Setze ISG_SET_LUEFTERSTUFETAG auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag') {
+        adapter.log.info('Setze Luefterstufe_Tag auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'LUEFTERSTUFETAG', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.ISG_SET_RAUMTEMPTAG') {
-        adapter.log.info('Setze ISG_SET_RAUMTEMPTAG auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Heizen.Raumtemperaturen_HK1.Raumtemp_Tag') {
+        adapter.log.info('Setze Raumtemp_Tag auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'RAUMTEMPTAG', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.ISG_SET_WARMWASSERTEMPTAG') {
-        adapter.log.info('Setze ISG_SET_WARMWASSERTEMPTAG auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Warmwasser.WW-Temperaturen.Warmwassertemp_Tag') {
+        adapter.log.info('Setze Warmwassertemp_TAG auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'WARMWASSERTEMPTAG', state.val);
     }
 
@@ -67,13 +67,17 @@ function main() {
     adapter.log.info('isgIP: ' + adapter.config.isgIP);
 
     //var isgParameters = ['ISG_SET_BETRIEBSART', 'ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
-    var isgParameters = ['ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
+    var isgParameters = [
+        'Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag',
+        'Einstellungen.Heizen.Raumtemperaturen_HK1.Raumtemp_Tag',
+        'Einstellungen.Warmwasser.WW-Temperaturen.Warmwassertemp_Tag'
+    ];
 
     // Betriebsart
-    adapter.setObjectNotExists("ISG_SET_BETRIEBSART", {
+    adapter.setObjectNotExists("Start.Betriebsart", {
         type: "state",
         common: {
-            name: "ISG_SET_BETRIEBSART",
+            name: "Betriebsart",
             type: "string",
             role: "value",
             read: true,
