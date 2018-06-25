@@ -31,6 +31,35 @@
 |KORREKTUR AT | {"name":"val134","value":"-2,0"}||
 |MASKIERZEIT TEMP. MESSUNG | {"name":"val187","value":"60"}||
 
+#### HYSTERESEN
+|name|code and value|valid values|
+|---|---|---|
+|± HYSTERESE 1 | {"name":"val162","value":"3,0"}|zwischen 0 K und 10 K|
+|± HYSTERESE 2 | {"name":"val163","value":"4,0"}|zwischen 0 K und 10 K|
+|± HYSTERESE 3 | {"name":"val164","value":"3,0"}|zwischen 0 K und 5 K|
+|± HYSTERESE 4 | {"name":"val165","value":"2,0"}|zwischen 0 K und 5 K|
+|± HYSTERESE 5 | {"name":"val166","value":"1,0"}|zwischen 0 K und 5 K|
+|ASYMETRIE DER HYST. | {"name":"val167","value":"2"}|zwischen 1 und 5 |
+
+#### HEIZKURVE HK1
+|name|code and value|valid values|
+|---|---|---|
+|STEIGUNG| {"name":"val35","value":"0,30"} | zwischen 0 und 5|
+|FUSSPUNKT| {"name":"val16","value":"4,0"} | zwischen 0 °C und 20 °C|
+|RAUMEINFLUSS| {"name":"val37","value":"0"} | zwischen 0 und 100|
+|ANTEIL VORLAUF| {"name":"val127","value":"30"}| zwischen 0 % und 100 %|
+|HK-TEMP. SOLL MAX.| {"name":"val22","value":"45,0"} | zwischen 10 °C und 65 °C|
+|HK-TEMP. SOLL MIN.| {"name":"val56","value":"5,0"} | zwischen 0 °C und 40 °C|
+
+#### HEIZKURVE HK1
+|name|code and value|valid values|
+|---|---|---|
+|STEIGUNG| {"name":"val36","value":"0,30"} | zwischen 0 und 5|
+|FUSSPUNKT| {"name":"val129","value":"0,0"} | zwischen 0 °C und 20 °C|
+|RAUMEINFLUSS| {"name":"val38","value":"0"} | zwischen 0 und 100|
+|HK-TEMP. SOLL MAX.| {"name":"val23","value":"55,0"} | zwischen 10 °C und 65 °C|
+|HK-TEMP. SOLL MIN.| {"name":"val57","value":"5,0"}] | zwischen 0 °C und 40 °C|
+
 ### WARMWASSER
 
 #### WW-TEMPERATUREN
