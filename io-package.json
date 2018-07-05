@@ -1,11 +1,13 @@
 {
     "common": {
         "name": "stiebel-lwz",
-        "version": "0.0.2",
+        "version": "0.0.2-dev",
         "news": {
+            "0.0.2": {
+                "en": "(darkiop) removed widgets & www folders; changes io-package.json: adapter type climate-control, native default IP 0.0.0.0, removed restartAdapters"
+            },
             "0.0.1": {
-                "en": "initial version",
-                "de": "Initiale Version"
+                "en": "initial version"
             }
         },
 		"title": "ioBroker Stiebel Eltron LWZ Adapter",
@@ -36,9 +38,130 @@
         "type": "climate-control"
     },
     "native": {
-        "isgIP": "0.0.0.0"
+        "isgIP": "isg"
     },
-    "objects": [
-
-    ]
+    "instanceObjects": [
+        {
+            "_id": "Start",
+            "type": "channel",
+            "common": {
+                "name": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen",
+            "type": "channel",
+            "common": {
+                "name": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Lueften",
+            "type": "channel",
+            "common": {
+                "name": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Heizen",
+            "type": "channel",
+            "common": {
+                "name": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Warmwasser",
+            "type": "channel",
+            "common": {
+                "name": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Start.Betriebsart",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "string",
+                "read": true,
+                "write": true,
+                "def": false,
+                "desc": "",
+                "states": {
+                    "AUTOMATIK": "Automatik",
+                    "WARMWASSER": "Warmwasser",
+                    "BEREITSCHAFT": "Bereitschaft",
+                    "TAGBETRIEB": "Tagbetrieb",
+                    "ABSENKBETRIEB": "Absenkbetrieb",
+                    "HANDBETRIEB": "Handbetrieb",
+                    "NOTBETRIEB": "Notbetrieb"
+                }
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Lueften.Lueftungsstufen.STUFE_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "number",
+                "min": 0,
+                "max": 3,
+                "read": true,
+                "write": true,
+                "def": false,
+                "desc": "",
+                "states": {
+                    "0": "0",
+                    "1": "1",
+                    "2": "2",
+                    "3": "3"
+                }
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Heizen.Raumtemperaturen_HK1.RAUMTEMP_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "number",
+                "unit": "°C",
+                "min": 10,
+                "max": 30,
+                "read":  true,
+                "write": true,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Einstellungen.Warmwasser.WW-Temperaturen.WW_SOLL_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "number",
+                "unit": "°C",
+                "min": 10,
+                "max": 55,
+                "read": true,
+                "write": true,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        }
+],
+    "objects": []
 }
+
+

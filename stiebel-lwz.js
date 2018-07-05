@@ -44,14 +44,14 @@ adapter.on('stateChange', function (id, state) {
     if (id == adapter.name + '.' + adapter.instance + '.Start.Betriebsart') {
         adapter.log.info('Setze Betriebsart auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'BETRIEBSART', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag') {
-        adapter.log.info('Setze Luefterstufe_Tag auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Lueften.Lueftungsstufen.STUFE_TAG') {
+        adapter.log.info('Setze Lueftungsstufe STUFE-TAG auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'LUEFTERSTUFETAG', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Heizen.Raumtemperaturen_HK1.Raumtemp_Tag') {
-        adapter.log.info('Setze Raumtemp_Tag auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Heizen.Raumtemperaturen_HK1.RAUMTEMP_TAG') {
+        adapter.log.info('Setze Raumtemperaturen_HK1 RAUMTEMP. TAG auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'RAUMTEMPTAG', state.val);
-    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Warmwasser.WW-Temperaturen.Warmwassertemp_Tag') {
-        adapter.log.info('Setze Warmwassertemp_TAG auf: ' + state.val);
+    } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Warmwasser.WW-Temperaturen.WW_SOLL_TAG') {
+        adapter.log.info('Setze WW-Temperaturen WW SOLL TAG auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'WARMWASSERTEMPTAG', state.val);
     }
 
@@ -65,48 +65,7 @@ adapter.on('ready', function () {
 function main() {
 
     adapter.log.info('isgIP: ' + adapter.config.isgIP);
-
-    //var isgParameters = ['ISG_SET_BETRIEBSART', 'ISG_SET_LUEFTERSTUFETAG', 'ISG_SET_RAUMTEMPTAG', 'ISG_SET_WARMWASSERTEMPTAG'];
-    var isgParameters = [
-        'Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag',
-        'Einstellungen.Heizen.Raumtemperaturen_HK1.Raumtemp_Tag',
-        'Einstellungen.Warmwasser.WW-Temperaturen.Warmwassertemp_Tag'
-    ];
-
-    // Betriebsart
-    adapter.setObjectNotExists("Start.Betriebsart", {
-        type: "state",
-        common: {
-            name: "Betriebsart",
-            type: "string",
-            role: "value",
-            read: true,
-            write: true,
-            desc: "",
-            states: {
-                "AUTOMATIK": "Automatik",
-                "WARMWASSER": "Warmwasser"
-            }
-        },
-        native: {}
-    });
-
-    for (var key in isgParameters) {
-        
-        var obj = isgParameters[key];
-        
-        adapter.setObjectNotExists(isgParameters[key], {
-            type: 'state',
-            common: {
-                name: isgParameters[key],
-                type: 'string',
-                role: 'value'
-            },
-            native: {}
-        });
-
-      }
-       
+      
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
 
