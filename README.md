@@ -5,6 +5,7 @@
 [![NPM version](https://img.shields.io/npm/v/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
 [![Tests](https://travis-ci.org/darkiop/ioBroker.stiebel-lwz.svg?branch=master)](https://travis-ci.org/darkiop/ioBroker.stiebel-lwz)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/darkiop/ioBroker.stiebel-lwz)
 
 [![NPM](https://nodei.co/npm/iobroker.stiebel-lwz.png?downloads=true)](https://nodei.co/npm/iobroker.stiebel-lwz/)
 
