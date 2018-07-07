@@ -36,13 +36,15 @@ adapter.on('stateChange', function (id, state) {
     // ==> https://www.w3schools.com/js/js_arrays.asp
 
     // paramaters can be found in isg_web_parameters.md
-    function set_isg_para(parameter, value) {
+    
+    //function set_isg_para(parameter, value) {
+    function set_isg_para_new() {
         var options = {
             url: 'http://' + adapter.config.isgIP + '/save.php',
             method: 'POST',
             form: {
-                'data': parameter,
-                'value': value
+                'data': 'val39s',  // TEST, normal: parameter
+                'value': '11'      // TEST, normal: value
             },
             headers: {
                 'Host': 'isg',                                                  // TODO adapter.config.isgIP ?
@@ -55,17 +57,45 @@ adapter.on('stateChange', function (id, state) {
                 'Connection': 'keep-alive',
                 'Pragma': 'no-cache',
                 'Cache-Control': 'no-cache'
-            }
+            },
+            gzip: true,
+            jar: true
         };
-        request(options);
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+              var info = JSON.parse(body);
+              console.log(info.stargazers_count + " Stars");
+              console.log(info.forks_count + " Forks");
+            }
+          }
+
+        request(options, callback);
+        
         adapter.log.info('parameter:' + parameter + '| value:' + value);
     };
 
+    var parameter, wert;
+    function set_isg_para(isgweburl, parameter, wert) {
+        exec('bash /opt/iobroker/node_modules/iobroker.stiebel-lwz/isg_set.sh ' + isgweburl + ' ' + parameter + ' ' + wert, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(stdout);
+        });
+    }
+
     // TODO Werte validieren bevor übertragen wird
-    // ==> ggf. schon bei Anlage ioBroker DP?
     if (id == adapter.name + '.' + adapter.instance + '.Start.Betriebsart') {
-        adapter.log.info('Setze Betriebsart auf: ' + state.val);
-        set_isg_para('val39s', state.val);
+        
+        //adapter.log.info('Setze Betriebsart auf: ' + state.val);
+        //set_isg_para('val39s', state.val);
+
+        //set_isg_para();
+        
+        set_isg_para(adapter.config.isgIP, 'BETRIEBSART', state.val);
+
     } else if (id == adapter.name + '.' + adapter.instance + '.Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag') {
         adapter.log.info('Setze Luefterstufe_Tag auf: ' + state.val);
         set_isg_para(adapter.config.isgIP, 'LUEFTERSTUFETAG', state.val);
@@ -87,57 +117,8 @@ adapter.on('ready', function () {
 function main() {
 
     adapter.log.info('ISGweb Hostname / IP: ' + adapter.config.isgIP);
-
-    var isgParameters = [
-        'Einstellungen.Lueften.Lueftungsstufen.Luefterstufe_Tag',
-        'Einstellungen.Heizen.Raumtemperaturen_HK1.Raumtemp_Tag',
-        'Einstellungen.Warmwasser.WW-Temperaturen.Warmwassertemp_Tag'
-    ];
-
-    // Betriebsart
-    adapter.setObjectNotExists("Start.Betriebsart", {
-        type: "state",
-        common: {
-            name: "Betriebsart",
-            type: "string",
-            role: "value",
-            read: true,
-            write: true,
-            desc: "",
-            states: {
-                "AUTOMATIK": "Automatik",           // 11
-                "WARMWASSER": "Warmwasser",         // 5
-                11: "Automatik_Test",
-                5: "Warmwasser_Test"                
-                /*
-                "BEREITSCHAFT": "Bereitschaft",     // 1
-                "TAGBETRIEB": "Tagbetrieb",         // 3
-                "ABSENKBETRIEB": "Absenkbetrieb",   // 4
-                "HANDBETRIEB": "Handbetrieb",       // 14
-                "NOTBETRIEB": "Notbetrieb"          // 0
-                */
-            }
-        },
-        native: {}
-    });
-
-    for (var key in isgParameters) {
-        
-        var obj = isgParameters[key];
-        
-        adapter.setObjectNotExists(isgParameters[key], {
-            type: 'state',
-            common: {
-                name: isgParameters[key],
-                type: 'string',
-                role: 'value'
-            },
-            native: {}
-        });
-
-      }
-       
+    
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
-    adapter.subscribeStates('*');
+    //adapter.subscribeStates('*');
 
 }
