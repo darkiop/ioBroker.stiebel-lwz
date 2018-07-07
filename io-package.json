@@ -1,13 +1,16 @@
 {
     "common": {
         "name": "stiebel-lwz",
-        "version": "0.0.2-dev",
+        "version": "0.0.3",
         "news": {
+            "0.0.3": {
+                "en": "(darkiop) set 'betriebsart' at adapter start"
+            },
             "0.0.2": {
                 "en": "(darkiop) removed widgets & www folders; changes io-package.json: adapter type climate-control, native default IP 0.0.0.0, removed restartAdapters"
             },
             "0.0.1": {
-                "en": "initial version"
+                "en": "(darkiop) initial version"
             }
         },
 		"title": "ioBroker Stiebel Eltron LWZ Adapter",

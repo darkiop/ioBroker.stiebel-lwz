@@ -1,6 +1,6 @@
 {
   "name": "iobroker.stiebel-lwz",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ioBroker stiebel-lwz Adapter",
   "author": {
     "name": "Thorsten Walk",
@@ -24,13 +24,19 @@
     "type": "git",
     "url": "https://github.com/darkiop/ioBroker.stiebel-lwz"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "cheerio-req": "^1.2.2",
+    "needle": "^2.2.1",
+    "request": "^2.87.0",
+    "restler": "^3.4.0"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "mocha": "^4.1.0"
   },
-  "main": "stiebel-lwz.js",
+  "main": "stiebel-lwz-dev.js",
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --exit"
   },
