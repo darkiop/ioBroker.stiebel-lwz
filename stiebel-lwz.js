@@ -5,7 +5,6 @@
 // https://nodejs.org/api/child_process.html
 const { exec } = require('child_process');
 
-
 var utils = require(__dirname + '/lib/utils'); // Get common adapter utils
 var adapter = new utils.Adapter('stiebel-lwz');
 
