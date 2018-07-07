@@ -1,6 +1,11 @@
 ![Logo](admin/stiebel-lwz.png)
-
 # ioBroker.stiebel-lwz
+=================
+
+[![NPM version](https://img.shields.io/npm/v/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
+[![Downloads](c)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
+
+[![NPM](https://nodei.co/npm/iobroker.stiebel-lwz.png?downloads=true)](https://nodei.co/npm/iobroker.stiebel-lwz/)
 
 This adapter provides an interface to the Stiebel Eltron Web [1] to control a LWZ (heat pump) over it. Tested with ISGweb version 8.5.6 on a LWZ 303i (production year 2011).
 
