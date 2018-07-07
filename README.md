@@ -3,7 +3,7 @@
 =================
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
-[![Downloads](c)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
 
 [![NPM](https://nodei.co/npm/iobroker.stiebel-lwz.png?downloads=true)](https://nodei.co/npm/iobroker.stiebel-lwz/)
 
