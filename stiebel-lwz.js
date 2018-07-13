@@ -89,7 +89,10 @@ function main() {
         });
 
     }
-    load_isg_parameters();
+    
+    if(adapter.config.loadISGwebParameters === true){
+        load_isg_parameters();
+    }
 
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
