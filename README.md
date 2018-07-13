@@ -5,6 +5,7 @@
 [![NPM version](https://img.shields.io/npm/v/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.stiebel-lwz.svg)](https://www.npmjs.com/package/iobroker.stiebel-lwz)
 [![Tests](https://travis-ci.org/darkiop/ioBroker.stiebel-lwz.svg?branch=master)](https://travis-ci.org/darkiop/ioBroker.stiebel-lwz)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/darkiop/ioBroker.stiebel-lwz)
 
 [![NPM](https://nodei.co/npm/iobroker.stiebel-lwz.png?downloads=true)](https://nodei.co/npm/iobroker.stiebel-lwz/)
 
@@ -18,12 +19,13 @@ Use at your own risk!
 https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 
 ## TODO
-* validate values for isg_set.sh / iobroker objects
 * add more parameters from ISGweb
-* write isg_set.sh in JS
-* parse ISGweb to save parameters in iobroker objects
+* write isg_set.sh in JS (request, restler, needle?)
+* parse ISGweb to save parameters in iobroker objects -> first try in 0.0.3 -> get 'betriebsart' on adapter start
 
 ## Changelog
+### 0.0.3 (2018-07-06)
+- (darkiop) set 'betriebsart' at adapter start
 ### 0.0.2 (2018-06-21)
 - (darkiop) removed widgets & www folders
 - (darkiop) changes io-package.json: adapter type climate-control, native default IP 0.0.0.0, removed restartAdapters
