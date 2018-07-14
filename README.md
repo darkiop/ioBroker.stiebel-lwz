@@ -9,7 +9,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.stiebel-lwz.png?downloads=true)](https://nodei.co/npm/iobroker.stiebel-lwz/)
 
-This adapter provides an interface to the Stiebel Eltron Web [1] to control a LWZ (heat pump) over it. Tested with ISGweb version 8.5.6 on a LWZ 303i (production year 2011).
+This adapter provides an interface to the Stiebel Eltron Web [1] to control a LWZ (heat pump) over it. Tested with ISGweb version 8.5.6/8.6.4 on a LWZ 303i (production year 2011).
 
 Use at your own risk!
 
