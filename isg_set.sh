@@ -6,6 +6,10 @@
 #
 # Thorsten Walk (April 2018)
 
+# $1 = url
+# $2 = parameter
+# $3 = wert
+
 # URL
 isgIP=$1
 
@@ -86,8 +90,7 @@ case "$2" in
   # 0,1,2,3
   para=val82
   value=$3
-  echo "setze LUEFTERSTUFETAG"
-  echo "auf WERT: $value"
+  echo "setze LUEFTERSTUFETAG auf WERT: $value"
   set_isg_para $para $value
   exit
   ;;

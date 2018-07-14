@@ -13,7 +13,7 @@
                 "en": "(darkiop) initial version"
             }
         },
-		"title": "ioBroker Stiebel Eltron LWZ Adapter",
+        "title": "ioBroker Stiebel Eltron LWZ Adapter",
         "titleLang": {
             "de": "Stiebel Eltron LWZ Adapter",
             "en": "Stiebel Eltron LWZ Adapter"
@@ -41,10 +41,12 @@
         "type": "climate-control"
     },
     "native": {
-        "isgIP": "isg"
+        "isgIP": "0.0.0.0",
+        "loadISGwebParameters": true,
+        "debugging": false
     },
-    "instanceObjects": [
-        {
+    "objects": [],
+    "instanceObjects": [{
             "_id": "Start",
             "type": "channel",
             "common": {
@@ -108,6 +110,62 @@
             "native": {}
         },
         {
+            "_id": "Start.Systemstatus",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "string",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Start.Portalstatus_letzter_Kontakt",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "string",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Start.Portalstatus_Schluessel",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "string",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Start.ISGwebVersion",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "string",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
             "_id": "Einstellungen.Lueften.Lueftungsstufen.STUFE_TAG",
             "type": "state",
             "common": {
@@ -139,7 +197,7 @@
                 "unit": "°C",
                 "min": 10,
                 "max": 30,
-                "read":  true,
+                "read": true,
                 "write": true,
                 "def": false,
                 "desc": ""
@@ -162,9 +220,621 @@
                 "desc": ""
             },
             "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMISTTEMP_HK1",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMSOLLTEMP_HK1",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMFEUCHTE_HK1",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "%",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMISTTEMP_HK2",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMSOLLTEMP_HK2",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Raumtemperatur.RAUMFEUCHTE_HK2",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "%",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Warmwasser.WW_ISTTEMP",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Warmwasser.WW_SOLLTEMP",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Waermeerzeuger.HEIZSTUFE",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.AUSSENTEMPERATUR",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.ISTWERT_HK1",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.SOLLWERT_HK1",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.ISTWERT_HK2",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.SOLLWERT_HK2",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.VORLAUFTEMPERATUR",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Heizen.RUECKLAUFTEMPERATUR",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Lueften.ZULUFT_IST_LUEFTERDREHZAHL",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "Hz",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Lueften.ZULUFT_SOLL_VOLUMENSTROM",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "m³/h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Lueften.ABLUFT_IST_LUEFTERDREHZAHL",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "Hz",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Anlage.Lueften.ABLUFT_SOLL_VOLUMENSTROM",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "m³/h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Prozesswerte.HEISSGASTEMPERATUR",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Prozesswerte.VERDAMPFERTEMP",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Prozesswerte.VERFLUESSIGERTEMP",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "°C",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Prozesswerte.FORTLUFT_IST_LUEFTERDREHZAHL",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "Hz",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Prozesswerte.FORTLUFT_SOLL_VOLUMENSTROM",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "%",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Leistungsaufnahme.P_HEIZUNG_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "kWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Leistungsaufnahme.P_HEIZUNG_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Leistungsaufnahme.P_WW_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "kWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Leistungsaufnahme.P_WW_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_HEIZEN_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "kWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_HEIZEN_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_WW_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "kWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_WW_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_NE_HEIZEN_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_NE_WW_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_WRG_TAG",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "kWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Waermemengen.WM_WRG_SUMME",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "MWh",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Laufzeiten.VERDICHTER_HEIZEN",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Laufzeiten.VERDICHTER_WW",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Laufzeiten.ELEKTR_NE_HEIZEN",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
+        },
+        {
+            "_id": "Info.Waermepumpe.Laufzeiten.ELEKTR_NE_WW",
+            "type": "state",
+            "common": {
+                "role": "value",
+                "name": "",
+                "type": "",
+                "unit": "h",
+                "read": true,
+                "write": false,
+                "def": false,
+                "desc": ""
+            },
+            "native": {}
         }
-],
-    "objects": []
+    ]
 }
-
-
