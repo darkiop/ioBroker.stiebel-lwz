@@ -87,6 +87,14 @@ function main() {
     // Ausgabe der eingestellten IP im Log
     if (debugging === true) adapter.log.info('isgIP: ' + adapter.config.isgIP);
 
+    // TODO: Abbruch bei keiner eingetragenen IP
+    /*
+    if (adapter.config.isgIP === "0.0.0.0") {
+        adapter.log.error('Keine IP Adresse eingetragen! Adapterstart wird abgebrochen!');
+        fail;
+    }
+    */
+
     // LADE cheerioReq
     // https://github.com/IonicaBizau/cheerio-req
     const cheerioReq = require('cheerio-req');
