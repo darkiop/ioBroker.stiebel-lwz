@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "stiebel-lwz",
-        "version": "0.0.3",
+        "version": "0.1.0",
         "news": {
+            "0.1.0": {
+                "en": "(darkiop) load parameters from ISGweb at Adapter Start"
+            },
             "0.0.3": {
                 "en": "(darkiop) set 'betriebsart' at adapter start"
             },
