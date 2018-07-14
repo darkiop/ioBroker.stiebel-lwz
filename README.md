@@ -21,7 +21,9 @@ https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 ## TODO
 * add more parameters from ISGweb
 * write isg_set.sh in JS (request, restler, needle?)
-* parse ISGweb to save parameters in iobroker objects -> first try in 0.0.3 -> get 'betriebsart' on adapter start
+* cronjob or adapter restart to update parsed parameters
+* documenation
+* load vales for adjustable parameters at adapter start
 
 ## Changelog
 ### 0.1.0 (2018-07-14)
