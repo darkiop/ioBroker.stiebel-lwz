@@ -24,6 +24,8 @@ https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 * parse ISGweb to save parameters in iobroker objects -> first try in 0.0.3 -> get 'betriebsart' on adapter start
 
 ## Changelog
+### 0.1.0 (2018-07-14)
+- (darkiop) load parameters from ISGweb at adapter start
 ### 0.0.3 (2018-07-06)
 - (darkiop) set 'betriebsart' at adapter start
 ### 0.0.2 (2018-06-21)

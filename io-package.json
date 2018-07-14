@@ -4,7 +4,7 @@
         "version": "0.1.0",
         "news": {
             "0.1.0": {
-                "en": "(darkiop) load parameters from ISGweb at Adapter Start"
+                "en": "(darkiop) load parameters from ISGweb at adapter start"
             },
             "0.0.3": {
                 "en": "(darkiop) set 'betriebsart' at adapter start"
