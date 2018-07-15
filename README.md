@@ -19,7 +19,7 @@ Use at your own risk!
 https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 
 ## TODO
-* add more parameters from ISGweb
+* add more adjustable parameters from ISGweb
 * write isg_set.sh in JS (request, restler, needle?)
 * cronjob or adapter restart to update parsed parameters
 * documenation
