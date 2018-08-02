@@ -33,7 +33,8 @@
             "de": "docs/de/admin.md"
         },
         "platform": "Javascript/Node.js",
-        "mode": "daemon",
+        "mode": "schedule",
+        "schedule": "*/5 * * * *",
         "icon": "stiebel-lwz.png",
         "materialize": true,
         "enabled": true,

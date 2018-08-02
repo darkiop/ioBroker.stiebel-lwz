@@ -21,7 +21,7 @@ adapter.on('objectChange', function (id, obj) {
     adapter.log.info('objectChange ' + id + ' ' + JSON.stringify(obj));
 });
 
-// is called if a subscribed state changes
+// SENDE DATEN AN ISG
 adapter.on('stateChange', function (id, state) {
 
     // Debug Ausgabe im Log
@@ -129,6 +129,7 @@ function main() {
         /**
          * DATENQUELLE: START
          */
+
         cheerioReq('http://' + adapter.config.isgIP, (err, $) => {
             
             // BETRIEBSART
@@ -207,6 +208,7 @@ function main() {
         /**
          * DATENQUELLE: INFO -> ANLAGE
          */
+
         cheerioReq('http://' + adapter.config.isgIP + '/?s=1,0', (err, $) => {
 
             var d = $("td.value");
@@ -310,7 +312,7 @@ function main() {
         }); // end of cheerioReq()
         
 
-    } // end of ISG()
+    } // end of getISGwebParameters()
 
     if (adapter.config.loadISGwebParameters === true) {
         getISGwebParameters();
@@ -318,5 +320,10 @@ function main() {
 
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
+
+    setTimeout(function () {
+        adapter.stop();
+    }, 10000);
+
 
 } // end of main()
