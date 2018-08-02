@@ -21,7 +21,7 @@ https://forum.iobroker.net/viewtopic.php?f=30&t=14309
 ## TODO
 * add more adjustable parameters from ISGweb
 * write isg_set.sh in JS (request, restler, needle?)
-* cronjob or adapter restart to update parsed parameters
+* cronjob or adapter restart to update parsed parameters --> workaround: instance > expert > adapter restart
 * documenation
 * load vales for adjustable parameters at adapter start
 
