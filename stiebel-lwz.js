@@ -321,9 +321,11 @@ function main() {
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
 
+    /*
     setTimeout(function () {
         adapter.stop();
     }, 10000);
+    */
 
 
 } // end of main()
