@@ -159,6 +159,7 @@ function main() {
 
             // LUEFTERSTUFE fuer DP zum setzen der Luefterstufe --> Später 4,2
             // ==> AUS JS auslesen
+            //var value = $('#versionsNummer').text().trim();
             /*
             <script type="text/javascript" language="javascript">
                 var valSettings = new Array();
@@ -321,11 +322,10 @@ function main() {
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
 
-    /*
     setTimeout(function () {
+        getISGwebParameters();
         adapter.stop();
     }, 10000);
-    */
 
 
 } // end of main()
