@@ -82,15 +82,13 @@ function main() {
     // Debug Ausgabe im Log
     const debugging = adapter.config.debugging;
 
-    // TODO: cron? automatischer adapter restart?
-
     // Ausgabe der eingestellten IP im Log
     if (debugging === true) adapter.log.info('isgIP: ' + adapter.config.isgIP);
 
     // TODO: Abbruch bei keiner eingetragenen IP
     /*
     if (adapter.config.isgIP === "0.0.0.0") {
-        adapter.log.error('Keine IP Adresse eingetragen! Adapterstart wird abgebrochen!');
+        adapter.log.info('Keine IP Adresse eingetragen! Adapterstart wird abgebrochen!');
         fail;
     }
     */
@@ -157,9 +155,44 @@ function main() {
             adapter.setState('Start.ISGwebVersion', value, true);
             if (debugging === true) adapter.log.info('ISGwebVersion: ' + value);
 
-            // LUEFTERSTUFE fuer DP zum setzen der Luefterstufe --> Später 4,2
-            // ==> AUS JS auslesen
-            //var value = $('#versionsNummer').text().trim();
+            // LUEFTERSTUFE TAG --> TODO: Seite: 4,2
+            var value = $('script').last().toString();
+            //if (debugging === true) adapter.log.info('cherrio-req: ' + value);
+            var replacelinebreak = value.replace(/\n|\r/g, '');
+            //if (debugging === true) adapter.log.info('replacelinebreak: ' + replacelinebreak);
+            var index = replacelinebreak.indexOf("val82info").toString();
+            //if (debugging === true) adapter.log.info('indexof: ' + index);
+            var start = parseFloat(index) + 25; //var substrTest = replacelinebreak.substring(index, end);
+            //if (debugging === true) adapter.log.info('start: ' + start);
+            var end = start + 1;
+            //if (debugging === true) adapter.log.info('end: ' + end);
+            var substr = replacelinebreak.substring(start, end);
+            //if (debugging === true) adapter.log.info('substring: ' + substr);
+            adapter.setState('Einstellungen.Lueften.Lueftungsstufen.STUFE_TAG', substr, true);
+            if (debugging === true) adapter.log.info('Luefterstufe TAG: ' + substr);
+
+            // HK1.RAUMTEMP_TAG --> TODO: Quelle Seite: 4,2
+            var value = $('script').last().toString();
+            var replacelinebreak = value.replace(/\n|\r/g, '');
+            var index = replacelinebreak.indexOf("val5info").toString();
+            var start = parseFloat(index) + 24;
+            var end = parseFloat(start) + 4;
+            var substr = replacelinebreak.substring(start, end);
+            var value = substr.replace(/,/, ".");
+            adapter.setState('Einstellungen.Heizen.Raumtemperaturen_HK1.RAUMTEMP_TAG', value, true);
+            if (debugging === true) adapter.log.info('HK1.RAUMTEMP_TAG: ' + value);
+
+            // WW SOLL TAG --> TODO: Quelle Seite: 4,2
+            var value = $('script').last().toString();
+            var replacelinebreak = value.replace(/\n|\r/g, '');
+            var index = replacelinebreak.indexOf("val17info").toString();
+            var start = parseFloat(index) + 25;
+            var end = parseFloat(start) + 4;
+            var substr = replacelinebreak.substring(start, end);
+            var value = substr.replace(/,/, ".");          
+            adapter.setState('Einstellungen.Warmwasser.WW-Temperaturen.WW_SOLL_TAG', value, true);
+            if (debugging === true) adapter.log.info('WW SOLL TAG: ' + value);
+
             /*
             <script type="text/javascript" language="javascript">
                 var valSettings = new Array();
@@ -199,7 +232,7 @@ function main() {
             valSettings['val82']['max'] = '3';
             jsobj = new Array();
             jsobj['id']='val82info';
-            jsobj['val']='1';                  <================================== HIER
+            jsobj['val']='1';
             jsvalues.push(jsobj);
             </script>
             */
@@ -311,8 +344,14 @@ function main() {
             setStateRemoveUnits('ELEKTR_NE_WW', 20, 'Info.Waermepumpe.Laufzeiten.ELEKTR_NE_WW')
 
         }); // end of cheerioReq()
-        
 
+        var reloadInS = adapter.config.reloadInS;
+        var reloadInMS = reloadInS * 1000;
+        setTimeout(function () {
+            getISGwebParameters();
+            if (debugging === true) adapter.log.info("---- data reloaded after " + reloadInMS + "ms / " + reloadInS + "s ----" );
+        }, reloadInMS);
+        
     } // end of getISGwebParameters()
 
     if (adapter.config.loadISGwebParameters === true) {
@@ -322,10 +361,11 @@ function main() {
     // in this stiebel-lwz all states changes inside the adapters namespace are subscribed
     adapter.subscribeStates('*');
 
+    /*
     setTimeout(function () {
         getISGwebParameters();
         adapter.stop();
     }, 10000);
-
+    */
 
 } // end of main()

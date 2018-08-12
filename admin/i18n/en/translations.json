@@ -3,5 +3,6 @@
   "Beim Speichern der Einstellungen wird der Adapter automatisch neu gestartet.": "on save adapter restarts with new config immediately",
   "Bei Adapterstart ISGweb Parameter laden?": "load ISGweb Parameters on adapter start?",
   "Zeige Werte im Log?": "Show values in log?",
+  "Werte aus ISGweb alle N Sekunden neu laden": "Reload values every N seconds",
   "Getestet mit \"Stiebel Eltron ISGweb\" v8.5.6/8.6.4 und \"Stiebel Eltron LWZ 303i\" Baujahr 2011. Benutzung auf eigenes Risiko!": "Tested with \"Stiebel Eltron ISGweb\" v8.5.6/8.6.4 and an \"Stiebel Eltron LWZ 303i\" construction year 2011! Use at your own Risk!"
 }

@@ -33,8 +33,7 @@
             "de": "docs/de/admin.md"
         },
         "platform": "Javascript/Node.js",
-        "mode": "schedule",
-        "schedule": "* * * * *",
+        "mode": "daemon",
         "icon": "stiebel-lwz.png",
         "materialize": true,
         "enabled": true,
@@ -45,9 +44,10 @@
         "type": "climate-control"
     },
     "native": {
-        "isgIP": "0.0.0.0",
+        "isgIP": "isg",
         "loadISGwebParameters": true,
-        "debugging": false
+        "debugging": false,
+        "reloadInS": 120
     },
     "objects": [],
     "instanceObjects": [{
