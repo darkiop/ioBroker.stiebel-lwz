@@ -10,19 +10,15 @@ sudo iobroker del stiebel-lwz.0
 
 echo ""
 
-sleep 2
+echo "-------- upload stiebel-lwz --------"
+
+sudo iobroker upload stiebel-lwz
+
+echo ""
 
 echo "-------- add instance stiebel-lwz.0 --------"
 
 sudo iobroker add stiebel-lwz
-
-echo ""
-
-sleep 2
-
-echo "-------- upload stiebel-lwz --------"
-
-sudo iobroker upload stiebel-lwz
 
 echo ""
 
