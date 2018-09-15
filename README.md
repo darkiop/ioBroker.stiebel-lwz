@@ -1,3 +1,6 @@
+ACHTUNG: Wird unter https://github.com/unltdnetworx/ioBroker.stiebel-isg weiterentwickelt!
+=================
+
 ![Logo](admin/stiebel-lwz.png)
 # ioBroker.stiebel-lwz
 =================
